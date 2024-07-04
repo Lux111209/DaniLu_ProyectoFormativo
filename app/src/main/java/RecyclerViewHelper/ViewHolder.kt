@@ -1,0 +1,4 @@
+package RecyclerViewHelper
+
+class ViewHolder {
+}
