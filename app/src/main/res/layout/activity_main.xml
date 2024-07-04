@@ -20,9 +20,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
+        android:layout_width="263dp"
+        android:layout_height="67dp"
+        android:fontFamily="@font/istok_web_bold"
         android:text="Bienvenido "
         android:textColor="#8ACEED"
         android:textSize="50sp"
@@ -34,17 +34,21 @@
         android:id="@+id/btnSiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="112dp"
+        android:fontFamily="@font/istok_web_bold"
         android:text="Siguiente"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="349dp"
-        android:layout_height="107dp"
-        android:text="Bienvenido a Seguro y Seguridad, espero tengas un lindo dia y espero puedas ayudar a muchas peronas este          dia."
+        android:layout_width="333dp"
+        android:layout_height="125dp"
+        android:fontFamily="@font/istok_web"
+        android:text="Bienvenido a Seguro y Seguridad, espero tengas un lindo día y espero puedas ayudar a muchas peronas este día."
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSiguiente"
