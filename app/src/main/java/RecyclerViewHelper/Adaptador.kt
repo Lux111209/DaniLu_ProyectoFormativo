@@ -1,4 +1,0 @@
-package RecyclerViewHelper
-
-class Adaptador {
-}

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Formulario">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="411dp"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/textViewNombres"
+            app:layout_constraintStart_toEndOf="@+id/textViewNombres">
+
+            <TextView
+                android:id="@+id/textViewNombres"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Nombre"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.021" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:hint="Ingrese nombres"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewNombres"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.013" />
+
+            <TextView
+                android:id="@+id/textViewApellidos"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Apellido"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.122" />
+
+            <TextView
+                android:id="@+id/textViewHabitacion"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Nº de habitación"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.215" />
+
+            <EditText
+                android:id="@+id/txtHabitacion"
+                android:layout_width="205dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:hint="Ingrese número de habitación"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewHabitacion"
+                app:layout_constraintTop_toBottomOf="@+id/txtApellido" />
+
+            <EditText
+                android:id="@+id/txtEdad"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="4dp"
+                android:hint="Ingrese edad"
+                android:inputType="number"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewEdad"
+                app:layout_constraintTop_toBottomOf="@+id/txtHabitacion" />
+
+            <TextView
+                android:id="@+id/textViewEdad"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Edad"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.328" />
+
+            <TextView
+                android:id="@+id/textViewEnfermedad"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Enfermedad"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.433" />
+
+            <EditText
+                android:id="@+id/txtEnfermedad"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                android:hint="Enfermedad"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewEnfermedad"
+                app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
+
+            <EditText
+                android:id="@+id/txtCama"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:hint="Ingrese número de cama"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewCama"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermedad" />
+
+            <TextView
+                android:id="@+id/textViewCama"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Nº de cama"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.542"
+                tools:layout_editor_absoluteX="3dp" />
+
+            <TextView
+                android:id="@+id/textViewMedicamentos"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Medicamentos asignados"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.638" />
+
+            <TextView
+                android:id="@+id/textViewHora"
+                android:layout_width="157dp"
+                android:layout_height="31dp"
+                android:padding="8dp"
+                android:text="Hora de aplicación"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.753" />
+
+            <EditText
+                android:id="@+id/txtHora"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:hint="Ingrese hora de aplicación"
+                android:inputType="time"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewHora"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedicamentos"
+                app:layout_constraintVertical_bias="0.161" />
+
+            <EditText
+                android:id="@+id/txtMedicamentos"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:hint="Ingrese medicamentos"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewMedicamentos"
+                app:layout_constraintTop_toBottomOf="@+id/txtCama" />
+
+            <EditText
+                android:id="@+id/txtApellido"
+                android:layout_width="225dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:hint="Apellido"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewApellidos"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="444dp"
+                android:text="Registrar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.468"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
