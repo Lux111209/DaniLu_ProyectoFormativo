@@ -1,9 +1,8 @@
 package RecyclerViewHelpers
 
 import Modelo.ClaseConexion
-import Modelo.Pacientes
+import Modelo.DataClassPacientes
 import Modelo.PacientesDetalles
-import RecyclerViewHelper.ViewHolder
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
@@ -19,12 +18,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import luis.escalante.appmoduloluisinpelon.R
-import modelo.DataClassPacientes
+import grupo.Acrividad.R
 import java.sql.ResultSet
 import java.sql.SQLException
 
-class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewHolder>() {
+class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewHolder>() {
 
     fun updateLista(newLista: List<DataClassPacientes>) {
         Datos = newLista
@@ -160,15 +158,15 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPacientes {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val vista = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_cardpaciente, parent, false)
-        return ViewHolderPacientes(vista)
+            .inflate(R.layout.activity_item_card, parent, false)
+        return ViewHolder(vista)
     }
 
     override fun getItemCount() = Datos.size
 
-    override fun onBindViewHolder(holder: ViewHolderPacientes, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = Datos[position]
         holder.txtPacienteNombre.text = item.nombres
         holder.txtPacienteApellido.text = item.apellidos
@@ -260,7 +258,7 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
     private fun mostrarDialog(context: Context, idPaciente: Int) {
         val builder = AlertDialog.Builder(context)
         val dialogLayout =
-            LayoutInflater.from(context).inflate(R.layout.activity_detalla_perfil, null)
+            LayoutInflater.from(context).inflate(R.layout.activity_vista_paciente, null)
         builder.setView(dialogLayout)
 
         val alertDialog = builder.create()

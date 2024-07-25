@@ -13,6 +13,15 @@
         android:theme="@style/Theme.DanielOswaldo_LuzMaria"
         tools:targetApi="31">
         <activity
+            android:name=".EditarPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".splash_scream_Hopsital"
+            android:exported="false" />
+        <activity
+            android:name=".perfilesUsuarios"
+            android:exported="false" />
+        <activity
             android:name=".VistaPaciente"
             android:exported="false" />
         <activity

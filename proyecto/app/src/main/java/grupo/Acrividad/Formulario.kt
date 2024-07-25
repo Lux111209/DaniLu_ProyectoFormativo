@@ -1,10 +1,15 @@
 package grupo.Acrividad
 
 import Modelo.ClaseConexion
+import android.app.AlertDialog
+import android.app.DatePickerDialog
+import android.content.Intent
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,62 +31,93 @@ class Formulario : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val txtNombre = findViewById<EditText>(R.id.txtNombre)
-        val txtApellido = findViewById<EditText>(R.id.txtApellido)
-        val txtEdad = findViewById<EditText>(R.id.txtEdad)
-        val txtEnfermedad = findViewById<EditText>(R.id.txtEnfermedad)
-        val txtHabitacion = findViewById<EditText>(R.id.txtHabitacion)
-        val txtCama = findViewById<EditText>(R.id.txtCama)
-        val txtMedicamento = findViewById<EditText>(R.id.txtMedicamentos)
-        val txtAplicacion = findViewById<EditText>(R.id.txtHora)
-        val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
 
-        btnRegistrar.setOnClickListener {
-            val nombre = txtNombre.text.toString()
-            val apellido = txtApellido.text.toString()
-            val edad = txtEdad.text.toString()
-            val enfermedad = txtEnfermedad.text.toString()
-            val habitacion = txtHabitacion.text.toString()
-            val cama = txtCama.text.toString()
-            val medicamentos = txtMedicamento.text.toString()
-            val aplicacion = txtAplicacion.text.toString()
-
-            if (nombre.isEmpty() || apellido.isEmpty() || edad.isEmpty() || enfermedad.isEmpty() || habitacion.isEmpty() || cama.isEmpty() || medicamentos.isEmpty() || aplicacion.isEmpty()) {
-                Toast.makeText(this, "Ingresa datos que sean válidos", Toast.LENGTH_SHORT).show()
-            } else {
-                Log.i(
-                    "Test de Credenciales",
-                    "Nombre: $nombre, Apellido: $apellido, Edad: $edad, Enfermedad: $enfermedad, Habitación: $habitacion, Cama: $cama, Medicamentos: $medicamentos y Aplicación: $aplicacion"
-                )
-            }
+        val btnHome = findViewById<ImageView>(R.id.btnPerfilPaciente)
+        btnHome.setOnClickListener {
+            val pantallaPerfiles = Intent(this, perfilesUsuarios::class.java)
+            startActivity(pantallaPerfiles)
+            overridePendingTransition(0, 0)
         }
 
-        btnRegistrar.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                val objConexion = ClaseConexion().cadenaConexion()
-                val addPaciente = objConexion?.prepareStatement("insert into Pacientes (UUID_Paciente, nombre, apellido, edad, numero_habitacion, numero_cama, medicamentos, hora_aplicacion) values (?, ?, ?, ?, ?, ?, ?, ?)")!!
+        val txtNombrePacientes = findViewById<EditText>(R.id.txtNombrePaciente)
+        val txtApellidosPacientes = findViewById<EditText>(R.id.txtApellidosPacientes)
+        val txtEdadPacientes = findViewById<EditText>(R.id.txtEdadPaciente)
+        val txtEnfermedadPacientes = findViewById<EditText>(R.id.txtEnfermedadPaciente)
+        val txtNumHabitacion = findViewById<EditText>(R.id.txtNumHabitacion)
+        val txtNumCama = findViewById<EditText>(R.id.txtNumCama)
+        val txtMedicamentos = findViewById<EditText>(R.id.txtMedicamentos)
+        val txtFechaIngreso = findViewById<EditText>(R.id.txtFechaIngreso)
+        val txtHoraAplicacion = findViewById<EditText>(R.id.txtHoraAplicacion)
 
-                addPaciente.setString(1, UUID.randomUUID().toString())
-                addPaciente.setString(2, txtNombre.text.toString())
-                addPaciente.setString(3, txtApellido.text.toString())
-                addPaciente.setString(4, txtEdad.text.toString())
-                addPaciente.setString(5, txtHabitacion.text.toString())
-                addPaciente.setString(6, txtCama.text.toString())
-                addPaciente.setString(7, txtMedicamento.text.toString())
-                addPaciente.setString(8, txtAplicacion.text.toString())
+        txtFechaIngreso.setOnClickListener {
+            val calendario = Calendar.getInstance()
+            val anio = calendario.get(Calendar.YEAR)
+            val mes = calendario.get(Calendar.MONTH)
+            val dia = calendario.get(Calendar.DAY_OF_MONTH)
 
-                addPaciente.executeUpdate()
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { view, anioSeleccionado, mesSeleccionado, diaSeleccionado ->
+                    val calendarioSeleccionado = Calendar.getInstance()
+                    calendarioSeleccionado.set(anioSeleccionado, mesSeleccionado, diaSeleccionado)
+                    val fechaSeleccionada = "$diaSeleccionado/${mesSeleccionado + 1}/$anioSeleccionado"
+                    txtFechaIngreso.setText(fechaSeleccionada)
+                },
+                anio, mes, dia
+            )
 
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@Formulario, "Se ha creado un nuevo paciente", Toast.LENGTH_SHORT).show()
-                    txtNombre.setText("")
-                    txtApellido.setText("")
-                    txtEdad.setText("")
-                    txtEnfermedad.setText("")
-                    txtHabitacion.setText("")
-                    txtCama.setText("")
-                    txtMedicamento.setText("")
-                    txtAplicacion.setText("")
+            datePickerDialog.show()
+        }
+
+        val btnAgregarPacientes = findViewById<Button>(R.id.btnAgregarPacientes)
+
+        btnAgregarPacientes.setOnClickListener {
+
+            val nombre = txtNombrePacientes.text.toString()
+            val apellido = txtApellidosPacientes.text.toString()
+            val edad = txtEdadPacientes.text.toString()
+            val enfermedad = txtEnfermedadPacientes.text.toString()
+            val habitacion = txtNumHabitacion.text.toString()
+            val cama = txtNumCama.text.toString()
+            val medicamentos = txtMedicamentos.text.toString()
+            val ingreso = txtFechaIngreso.text.toString()
+            val hora = txtHoraAplicacion.text.toString()
+
+            if(nombre.isEmpty() || apellido.isEmpty() || edad.isEmpty() || enfermedad.isEmpty() || habitacion.isEmpty() || cama.isEmpty() || medicamentos.isEmpty() || ingreso.isEmpty() || hora.isEmpty()){
+                Toast.makeText(
+                    this,
+                    "Complete todos los campos antes de continuar",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }else {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val objConexion = ClaseConexion().cadenaConexion()
+                    val addPaciente =
+                        objConexion?.prepareStatement("INSERT INTO Pacientes(nombres, apellidos, edad, enfermedad, num_habitacion, num_cama, medicamentos, fecha_ingreso, hora_aplicacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")!!
+                    addPaciente.setString(1, txtNombrePacientes.text.toString())
+                    addPaciente.setString(2, txtApellidosPacientes.text.toString())
+                    addPaciente.setInt(3, txtEdadPacientes.text.toString().toInt())
+                    addPaciente.setString(4, txtEnfermedadPacientes.text.toString())
+                    addPaciente.setInt(5, txtNumHabitacion.text.toString().toInt())
+                    addPaciente.setInt(6, txtNumCama.text.toString().toInt())
+                    addPaciente.setString(7, txtMedicamentos.text.toString())
+                    addPaciente.setString(8, txtFechaIngreso.text.toString())
+                    addPaciente.setString(9, txtHoraAplicacion.text.toString())
+                    addPaciente.executeQuery()
+
+                    withContext(Dispatchers.Main) {
+                        AlertDialog.Builder(this@Formulario)
+                            .setTitle("Registro de paciente exitoso!")
+                        txtNombrePacientes.setText("")
+                        txtApellidosPacientes.setText("")
+                        txtEdadPacientes.setText("")
+                        txtEnfermedadPacientes.setText("")
+                        txtNumHabitacion.setText("")
+                        txtNumCama.setText("")
+                        txtMedicamentos.setText("")
+                        txtFechaIngreso.setText("")
+                        txtHoraAplicacion.setText("")
+                    }
                 }
             }
         }

@@ -5,6 +5,205 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VistaPaciente">
+    tools:context=".activity_detalla_perfil">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="616dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/txtHoraAplicacionI"
+            android:layout_width="255dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Hora aplicacion"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMedicamentoI" />
+
+        <TextView
+            android:id="@+id/txtEnfermedadPacienteI"
+            android:layout_width="215dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Enfermedad del Paciente"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPacienteApellidoI" />
+
+        <TextView
+            android:id="@+id/txtNumeroHabitacionI"
+            android:layout_width="215dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Número de habitación"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEnfermedadPacienteI" />
+
+        <TextView
+            android:id="@+id/txtNumeroCamaI"
+            android:layout_width="215dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Número de cama"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumeroHabitacionI" />
+
+        <TextView
+            android:id="@+id/txtFechaIngresoI"
+            android:layout_width="215dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Fecha de Ingreso"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumeroCamaI" />
+
+        <TextView
+            android:id="@+id/txtMedicamentoI"
+            android:layout_width="215dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Medicamento"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFechaIngresoI" />
+
+        <TextView
+            android:id="@+id/txtPacienteNombreI"
+            android:layout_width="203dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="60dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Nombre del Paciente"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/txtEdadPacienteI"
+            android:layout_width="203dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Edad del Paciente"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPacienteNombreI" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_boton_volver" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/raleway_extrabold_italic"
+            android:text="Descripcion perfil"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtPacienteApellidoI"
+            android:layout_width="203dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="4dp"
+            android:text="Apellido del Paciente"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEdadPacienteI" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="411dp"
+        android:layout_height="119dp"
+        android:background="#7498F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:fontFamily="@font/raleway_extrabold_italic"
+            android:text="Pacientes"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="193dp"
+            android:layout_height="108dp"
+            android:layout_marginEnd="260dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_logo_bloom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

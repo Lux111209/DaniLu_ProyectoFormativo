@@ -1,6 +1,6 @@
 package Modelo
 
-data class Pacientes(
+data class DataClassPacientes(
     var id_paciente: Int,
     var nombres: String,
     var apellidos: String,
