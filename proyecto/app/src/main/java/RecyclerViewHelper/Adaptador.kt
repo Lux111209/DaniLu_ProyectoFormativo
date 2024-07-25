@@ -62,7 +62,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
                         objConexion.prepareStatement("delete from Pacientes where id_paciente = ?")!!
                     borrarPaciente.setInt(1, id_paciente)
                     val pacienteEliminado = borrarPaciente.executeUpdate()
-                    Log.d("deleteData", "Paciente eliminado: $pacienteEliminado")
+                    Log.d("deleteData", "El Paciente se eliminado exitosamente: $pacienteEliminado")
 
                     objConexion.commit()
                     Log.d("deleteData", "Commit exitoso")
@@ -73,7 +73,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
                         notifyDataSetChanged()
                         Toast.makeText(
                             context,
-                            "Paciente borrado correctamente",
+                            "El Paciente se eliminado exitosamente ",
                             Toast.LENGTH_SHORT
                         )
                             .show()
@@ -86,25 +86,29 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
                     }catch (rollbackEx: SQLException){
                         Log.e("deleteData", "No esta bien el rollback", rollbackEx)
                     }
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Error al borrar paciente: ${e.message}", Toast.LENGTH_SHORT).show()
+                    withContext(Dispatchers.Main)
+                    {
+                        Toast.makeText(context, "Da error al borrar paciente: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }catch (e: Exception){
-                    Log.e("deleteData", "Error que no se esperaba", e)
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Error que no se esperaba: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Log.e("deleteData", "Este error no se esperaba", e)
+                    withContext(Dispatchers.Main)
+                    {
+                        Toast.makeText(context, "Este error no se esperaba: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 } finally {
                     try {
                         objConexion.close()
-                        Log.d("deleteData", "se cerro la conexion")
-                    }catch (closeEx: SQLException){
-                        Log.e("deleteData", "no cierra la conexion", closeEx)
+                        Log.d("deleteData", "Se ha cerrado la conexion.")
+                    }catch (closeEx: SQLException)
+                    {
+                        Log.e("deleteData", "Se ha cerrado la conexion", closeEx)
                     }
                 }
             }else{
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(context, "no furula la base", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "no funciona la base de datos",
+                        Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -136,14 +140,14 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
                         )
                         Toast.makeText(
                             context,
-                            "Todo se actualizo joya",
+                            "Actualizado perfectamente",
                             Toast.LENGTH_SHORT
                         ).show()
 
                     }
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Revisa bien eso", Toast.LENGTH_SHORT)
+                        Toast.makeText(context, "Revisar bien", Toast.LENGTH_SHORT)
                             .show()
                     }
                     e.printStackTrace()
@@ -151,8 +155,9 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
                     objConexion.close()
                 }
             }else{
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(context, "La conexion esta mal (ip)", Toast.LENGTH_SHORT).show()
+                withContext(Dispatchers.Main)
+                {
+                    Toast.makeText(context, "La ip esta mala ", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -160,6 +165,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val vista = LayoutInflater.from(parent.context)
+
             .inflate(R.layout.activity_item_card, parent, false)
         return ViewHolder(vista)
     }
@@ -176,7 +182,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
 
             val builder = androidx.appcompat.app.AlertDialog.Builder(context)
             builder.setTitle("Borrar")
-            builder.setMessage("Estás segur@ de borrar este paciente?")
+            builder.setMessage("Estás seguro que deseas este paciente?")
 
             builder.setPositiveButton("Si"){dialog, which ->
                 deleteData(context, item.id_paciente, position)
@@ -227,7 +233,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
             editIngreso.setHint(item.fecha_ingreso)
 
             val builder = AlertDialog.Builder(context)
-            builder.setTitle("Actualizar Paciente")
+            builder.setTitle("Actualizacion de paciente")
             builder.setView(dialogView)
             builder.setPositiveButton("Guardar"){dialog, _ ->
                 val newEdad = editEdad.text.toString().toIntOrNull() ?: item.edad
@@ -291,9 +297,9 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
                 }
 
             } catch (e: Exception){
-                Log.e("AdaptadorPacientes", "El dialog es el error", e)
+                Log.e("AdaptadorPacientes", "El error es en el dialog", e)
                 withContext(Dispatchers.Main){
-                    Toast.makeText(context, "asigna todos los campos", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Agregar todos los campos", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -302,7 +308,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
     private fun obtenerDetallesPaciente(idPaciente: Int): PacientesDetalles{
         val objConexion = ClaseConexion().cadenaConexion()
         if(objConexion == null){
-            throw IllegalStateException("es nula la conexion")
+            throw IllegalStateException("La conexion es nula")
         }
 
         val statement = objConexion.createStatement()
@@ -324,7 +330,7 @@ class Adaptador(var Datos: List<DataClassPacientes>): RecyclerView.Adapter<ViewH
 
         val resultSet: ResultSet = statement.executeQuery(query)
         if(!resultSet.next()){
-            throw IllegalStateException("No se encontraron detalles para el paciente")
+            throw IllegalStateException("No hay ningun detalle de paciente")
         }
 
         val pacienteDetalles = PacientesDetalles(

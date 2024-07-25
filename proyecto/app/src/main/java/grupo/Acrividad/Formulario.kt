@@ -107,7 +107,7 @@ class Formulario : AppCompatActivity() {
 
                     withContext(Dispatchers.Main) {
                         AlertDialog.Builder(this@Formulario)
-                            .setTitle("Registro de paciente exitoso!")
+                            .setTitle("El Registro se ha hecho exitosamente!")
                         txtNombrePacientes.setText("")
                         txtApellidosPacientes.setText("")
                         txtEdadPacientes.setText("")

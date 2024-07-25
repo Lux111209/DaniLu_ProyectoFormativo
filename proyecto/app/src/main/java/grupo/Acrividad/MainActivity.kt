@@ -45,13 +45,13 @@ class MainActivity: AppCompatActivity() {
             if (correo.isEmpty() || contrasena.isEmpty()) {
                 Toast.makeText(
                     this,
-                    "Error, para acceder debes llenar todas las casillas.",
+                    "Error, debes de llenar todas las casillas",
                     Toast.LENGTH_SHORT
                 ).show()
             } else if (!correoPattern.matches(correo)) {
                 Toast.makeText(
                     this,
-                    "El correo electrónico no es valido.",
+                    "El correo electronico debe de ser valido.",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
@@ -73,13 +73,13 @@ class MainActivity: AppCompatActivity() {
 
                         miMorreo = txtCorreo.text.toString()
                         runOnUiThread{
-                            Toast.makeText(this@MainActivity, "Bienvenid@!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity, "Bienvenid@ a nuestra aplicacion!", Toast.LENGTH_SHORT).show()
                         }
                         startActivity(pantallaListadoPacientes)
                         finish()
                     } else {
                         runOnUiThread{
-                            Toast.makeText(this@MainActivity, "Usuario no encontrado, verifique las credenciales", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@MainActivity, "Usuario no se ha encontrado, porfavor verifica las credenciales.", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
