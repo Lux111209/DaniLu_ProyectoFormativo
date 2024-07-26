@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/albert_sans_extrabold</item>
+        <item>@font/albert_sans_semibold</item>
         <item>@font/comfortaa_bold</item>
         <item>@font/istok_web</item>
         <item>@font/istok_web_bold</item>

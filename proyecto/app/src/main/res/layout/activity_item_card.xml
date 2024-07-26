@@ -16,86 +16,79 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="127dp"
-        android:background="#ADDBFF"
+        android:background="#363E5D"
         android:orientation="horizontal"
         android:padding="16dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="10dp"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_card">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="97dp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#363E5D"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtPacienteNombre"
                 android:layout_width="203dp"
                 android:layout_height="33dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:paddingLeft="15dp"
                 android:paddingBottom="4dp"
                 android:text="Nombre del Paciente"
-                android:textColor="@color/black"
+                android:textColor="#F3F3F3"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.093" />
+                app:layout_constraintVertical_bias="0.25" />
 
             <ImageView
                 android:id="@+id/btnBorrar"
-                android:layout_width="39dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="28dp"
-                app:layout_constraintStart_toEndOf="@+id/txtPacienteNombre"
-                app:srcCompat="@drawable/ic_eliminar"
-                tools:layout_editor_absoluteY="21dp" />
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.796"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.49"
+                app:srcCompat="@drawable/iconborrar" />
 
             <ImageView
                 android:id="@+id/btnEditar"
-                android:layout_width="37dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="4dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.304"
-                app:layout_constraintStart_toEndOf="@+id/btnBorrar"
-                app:srcCompat="@drawable/ic_editar"
-                tools:layout_editor_absoluteY="21dp" />
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.49"
+                app:srcCompat="@drawable/iconeditar" />
 
             <TextView
                 android:id="@+id/txtPacienteApellido"
                 android:layout_width="203dp"
                 android:layout_height="33dp"
-                android:layout_marginTop="12dp"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:paddingLeft="15dp"
                 android:paddingBottom="4dp"
                 android:text="Apellido del Paciente"
-                android:textColor="@color/black"
+                android:textColor="#F3F3F3"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/btnBorrar"
-                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPacienteNombre" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.77" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="vertical" />
 
     </LinearLayout>
 

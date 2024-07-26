@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
@@ -36,6 +37,7 @@ class perfilesUsuarios : AppCompatActivity() {
         }
 
         val rcvPacientes = findViewById<RecyclerView>(R.id.rcvPacientes)
+        rcvPacientes.layoutManager = GridLayoutManager(this, 2)
 
         rcvPacientes.layoutManager = LinearLayoutManager(this)
 

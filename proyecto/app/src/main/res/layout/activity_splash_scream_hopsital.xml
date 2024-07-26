@@ -5,16 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C8C8C8"
+    android:background="#FFFFFF"
     tools:context=".splash_scream_Hopsital">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="351dp"
-        android:layout_height="351dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="294dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="295dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Logo" />
+        app:srcCompat="@drawable/logo_oficial_del_ministerio_de_salud_de_el_salvador" />
 </androidx.constraintlayout.widget.ConstraintLayout>

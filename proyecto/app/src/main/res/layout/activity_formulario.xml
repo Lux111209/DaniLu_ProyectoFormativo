@@ -5,18 +5,42 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F3F3"
+    android:background="#363E5D"
     tools:context=".Formulario">
 
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="527dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout8"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/albert_sans_extrabold"
+        android:text="PACIENTES"
+        android:textColor="#F3F3F3"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="452dp"
+        android:layout_height="716dp"
+        android:layout_marginTop="136dp"
+        android:src="@drawable/rectangulo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="410dp"
+        android:layout_height="487dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -36,9 +60,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Nombres"
-                android:textColor="#000000"
+                android:textColor="#33395D"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -50,9 +74,9 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Apellidos"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtApellidosPacientes"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,9 +89,9 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="28dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Edad"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtEdadPaciente"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,9 +104,9 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Enfermedad"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtEnfermedadPaciente"
                 app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -105,9 +131,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Fecha de ingreso"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtMedicamentos" />
@@ -118,9 +144,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Hora de aplicacion "
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtFechaIngreso" />
@@ -132,9 +158,9 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Medicamentos asignados"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtMedicamentos"
                 app:layout_constraintStart_toStartOf="parent"
@@ -147,9 +173,9 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Numero de habitación"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtNumHabitacion"
                 app:layout_constraintStart_toStartOf="parent"
@@ -161,8 +187,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
-                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -173,8 +201,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
-                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -185,7 +215,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -196,8 +229,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
-                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -209,9 +244,9 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:text="Numero de cama"
-                android:textColor="#000000"
+                android:textColor="#363E5D"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtNumCama"
                 app:layout_constraintStart_toStartOf="parent"
@@ -223,8 +258,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
-                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.619"
                 app:layout_constraintStart_toStartOf="parent"
@@ -236,8 +273,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:inputType="text"
-                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -250,9 +289,11 @@
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:gravity="start|top"
                 android:inputType="time"
-                android:textColor="#000000"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -266,9 +307,11 @@
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
+                android:fontFamily="@font/albert_sans_semibold"
                 android:gravity="start|top"
                 android:inputType="date"
-                android:textColor="#000000"
+                android:textAlignment="textStart"
+                android:textColor="#F3F3F3"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -279,8 +322,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#ADDBFF"
-                android:text="AGREGAR"
+                android:backgroundTint="#363E5D"
+                android:fontFamily="@font/albert_sans_semibold"
+                android:text="Agregar"
+                android:textColor="#F3F3F3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -290,45 +335,9 @@
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="411dp"
-        android:layout_height="119dp"
-        android:background="#ADDBFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
-            android:fontFamily="sans-serif"
-            android:text="PACIENTES"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.494" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="146dp"
-            android:layout_height="73dp"
-            android:layout_marginEnd="248dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/Logo" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout8"
         android:layout_width="416dp"
-        android:layout_height="85dp"
+        android:layout_height="100dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -336,46 +345,27 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+        <ImageView
+            android:id="@+id/btnAgregar"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/ic_fondo_icono"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/btnAgregar"
-                android:layout_width="35dp"
-                android:layout_height="34dp"
-                android:background="@drawable/ic_add"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/ic_fondo_icono"
+            android:background="@drawable/add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/btnPerfilPaciente"
-                android:layout_width="35dp"
-                android:layout_height="34dp"
-                android:background="@drawable/ic_eliminar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/btnPerfilPaciente"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

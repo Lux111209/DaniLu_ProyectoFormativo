@@ -5,81 +5,101 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C8C8C8"
-    tools:context=".MainActivity" >
+    android:background="#363E5D"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="350dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="409dp"
+        android:layout_height="229dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginBottom="576dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/headerphoto" />
+
+    <EditText
+        android:id="@+id/txtCorreoInicio"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:background="@drawable/rounded_corner_view"
+        android:backgroundTint="#F3F3F3"
+        android:ems="10"
+        android:fontFamily="@font/albert_sans_semibold"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColor="#1B2126"
+        android:textColorHint="#5E1B2126"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54" />
+
+    <EditText
+        android:id="@+id/txtContrasenaInicio"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:background="@drawable/rounded_corner_view"
+        android:backgroundTint="#F3F3F3"
+        android:ems="10"
+        android:fontFamily="@font/albert_sans_semibold"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="#1B2126"
+        android:textColorHint="#5E1B2126"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="355dp"
+        android:layout_height="68dp"
+        android:backgroundTint="#2A439D"
+        android:fontFamily="@font/albert_sans_semibold"
+        android:text="Iniciar sesión"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/albert_sans_semibold"
+        android:text="¡Bienvenido!"
+        android:textColor="#F3F3F3"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif"
-        android:text="Correo"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtCorreoInicio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:text="correo" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif"
-        android:text="Contraseña"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtContrasenaInicio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorreoInicio" />
-
-    <EditText
-        android:id="@+id/txtContrasenaInicio"
-        android:layout_width="373dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ic_fondo_texts"
-        android:ems="10"
-        android:inputType="textPassword"
+        android:fontFamily="@font/albert_sans_semibold"
+        android:text="Es hora de iniciar sesión."
+        android:textColor="#F3F3F3"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <EditText
-        android:id="@+id/txtCorreoInicio"
-        android:layout_width="373dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ic_fondo_texts"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <Button
-        android:id="@+id/btnIniciarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#2A439D"
-        android:fontFamily="sans-serif"
-        android:text="iniciar sesion"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContrasenaInicio" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.394" />
 </androidx.constraintlayout.widget.ConstraintLayout>
